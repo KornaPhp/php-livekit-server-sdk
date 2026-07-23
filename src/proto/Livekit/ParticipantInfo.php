@@ -30,7 +30,7 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
      */
     private $tracks;
     /**
-     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $metadata = '';
     /**
@@ -46,7 +46,7 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
      */
     protected $joined_at_ms = 0;
     /**
-     * Generated from protobuf field <code>string name = 9 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string name = 9 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $name = '';
     /**
@@ -73,7 +73,7 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
      */
     protected $kind = 0;
     /**
-     * Generated from protobuf field <code>map<string, string> attributes = 15 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>map<string, string> attributes = 15 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     private $attributes;
     /**
@@ -94,6 +94,13 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 client_protocol = 20;</code>
      */
     protected $client_protocol = 0;
+    /**
+     * capabilities the participant's client advertises, mirrored from ClientInfo.
+     * Lets other participants perform client-side feature detection.
+     *
+     * Generated from protobuf field <code>repeated .livekit.ClientInfo.Capability capabilities = 21;</code>
+     */
+    private $capabilities;
 
     /**
      * Constructor.
@@ -124,6 +131,9 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
      *     @type \Livekit\DataTrackInfo[]|\Google\Protobuf\Internal\RepeatedField $data_tracks
      *     @type int $client_protocol
      *           protocol version used for client feature compatibility
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $capabilities
+     *           capabilities the participant's client advertises, mirrored from ClientInfo.
+     *           Lets other participants perform client-side feature detection.
      * }
      */
     public function __construct($data = NULL) {
@@ -220,7 +230,7 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getMetadata()
@@ -229,7 +239,7 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -294,7 +304,7 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 9 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string name = 9 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getName()
@@ -303,7 +313,7 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string name = 9 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string name = 9 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -442,7 +452,7 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> attributes = 15 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>map<string, string> attributes = 15 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getAttributes()
@@ -451,7 +461,7 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> attributes = 15 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>map<string, string> attributes = 15 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -551,6 +561,34 @@ class ParticipantInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->client_protocol = $var;
+
+        return $this;
+    }
+
+    /**
+     * capabilities the participant's client advertises, mirrored from ClientInfo.
+     * Lets other participants perform client-side feature detection.
+     *
+     * Generated from protobuf field <code>repeated .livekit.ClientInfo.Capability capabilities = 21;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCapabilities()
+    {
+        return $this->capabilities;
+    }
+
+    /**
+     * capabilities the participant's client advertises, mirrored from ClientInfo.
+     * Lets other participants perform client-side feature detection.
+     *
+     * Generated from protobuf field <code>repeated .livekit.ClientInfo.Capability capabilities = 21;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCapabilities($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Livekit\ClientInfo\Capability::class);
+        $this->capabilities = $arr;
 
         return $this;
     }

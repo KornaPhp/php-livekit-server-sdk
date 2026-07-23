@@ -70,6 +70,13 @@ class ClientInfo extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>int32 client_protocol = 12;</code>
      */
     protected $client_protocol = 0;
+    /**
+     * capabilities the client advertises. Populated automatically by each SDK;
+     * not a user-configurable setting.
+     *
+     * Generated from protobuf field <code>repeated .livekit.ClientInfo.Capability capabilities = 13;</code>
+     */
+    private $capabilities;
 
     /**
      * Constructor.
@@ -93,6 +100,9 @@ class ClientInfo extends \Google\Protobuf\Internal\Message
      *           e.g. "components-js:1.2.3,track-processors-js:1.2.3"
      *     @type int $client_protocol
      *           client protocol version
+     *     @type int[]|\Google\Protobuf\Internal\RepeatedField $capabilities
+     *           capabilities the client advertises. Populated automatically by each SDK;
+     *           not a user-configurable setting.
      * }
      */
     public function __construct($data = NULL) {
@@ -374,6 +384,34 @@ class ClientInfo extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkInt32($var);
         $this->client_protocol = $var;
+
+        return $this;
+    }
+
+    /**
+     * capabilities the client advertises. Populated automatically by each SDK;
+     * not a user-configurable setting.
+     *
+     * Generated from protobuf field <code>repeated .livekit.ClientInfo.Capability capabilities = 13;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getCapabilities()
+    {
+        return $this->capabilities;
+    }
+
+    /**
+     * capabilities the client advertises. Populated automatically by each SDK;
+     * not a user-configurable setting.
+     *
+     * Generated from protobuf field <code>repeated .livekit.ClientInfo.Capability capabilities = 13;</code>
+     * @param int[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setCapabilities($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::ENUM, \Livekit\ClientInfo\Capability::class);
+        $this->capabilities = $arr;
 
         return $this;
     }

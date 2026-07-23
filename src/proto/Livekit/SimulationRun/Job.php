@@ -37,6 +37,36 @@ class Job extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string label = 6;</code>
      */
     protected $label = '';
+    /**
+     * Generated from protobuf field <code>repeated string tags = 7;</code>
+     */
+    private $tags;
+    /**
+     * Generated from protobuf field <code>string room_name = 8;</code>
+     */
+    protected $room_name = '';
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 10;</code>
+     */
+    protected $started_at = null;
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 11;</code>
+     */
+    protected $ended_at = null;
+    /**
+     * Generated from protobuf field <code>string room_id = 12;</code>
+     */
+    protected $room_id = '';
+    /**
+     * Generated from protobuf field <code>.livekit.SimulationRun.Job.Usage usage = 13;</code>
+     */
+    protected $usage = null;
+    /**
+     * Quality metrics for this job's call. Unset when the job produced none.
+     *
+     * Generated from protobuf field <code>.livekit.SimulationRun.JobMetrics metrics = 14;</code>
+     */
+    protected $metrics = null;
 
     /**
      * Constructor.
@@ -50,6 +80,14 @@ class Job extends \Google\Protobuf\Internal\Message
      *     @type string $error
      *     @type string $agent_expectations
      *     @type string $label
+     *     @type string[]|\Google\Protobuf\Internal\RepeatedField $tags
+     *     @type string $room_name
+     *     @type \Google\Protobuf\Timestamp $started_at
+     *     @type \Google\Protobuf\Timestamp $ended_at
+     *     @type string $room_id
+     *     @type \Livekit\SimulationRun\Job\Usage $usage
+     *     @type \Livekit\SimulationRun\JobMetrics $metrics
+     *           Quality metrics for this job's call. Unset when the job produced none.
      * }
      */
     public function __construct($data = NULL) {
@@ -185,6 +223,204 @@ class Job extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->label = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string tags = 7;</code>
+     * @return \Google\Protobuf\Internal\RepeatedField
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * Generated from protobuf field <code>repeated string tags = 7;</code>
+     * @param string[]|\Google\Protobuf\Internal\RepeatedField $var
+     * @return $this
+     */
+    public function setTags($var)
+    {
+        $arr = GPBUtil::checkRepeatedField($var, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->tags = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string room_name = 8;</code>
+     * @return string
+     */
+    public function getRoomName()
+    {
+        return $this->room_name;
+    }
+
+    /**
+     * Generated from protobuf field <code>string room_name = 8;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRoomName($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->room_name = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 10;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getStartedAt()
+    {
+        return $this->started_at;
+    }
+
+    public function hasStartedAt()
+    {
+        return isset($this->started_at);
+    }
+
+    public function clearStartedAt()
+    {
+        unset($this->started_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp started_at = 10;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setStartedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->started_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 11;</code>
+     * @return \Google\Protobuf\Timestamp|null
+     */
+    public function getEndedAt()
+    {
+        return $this->ended_at;
+    }
+
+    public function hasEndedAt()
+    {
+        return isset($this->ended_at);
+    }
+
+    public function clearEndedAt()
+    {
+        unset($this->ended_at);
+    }
+
+    /**
+     * Generated from protobuf field <code>.google.protobuf.Timestamp ended_at = 11;</code>
+     * @param \Google\Protobuf\Timestamp $var
+     * @return $this
+     */
+    public function setEndedAt($var)
+    {
+        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
+        $this->ended_at = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string room_id = 12;</code>
+     * @return string
+     */
+    public function getRoomId()
+    {
+        return $this->room_id;
+    }
+
+    /**
+     * Generated from protobuf field <code>string room_id = 12;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setRoomId($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->room_id = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.livekit.SimulationRun.Job.Usage usage = 13;</code>
+     * @return \Livekit\SimulationRun\Job\Usage|null
+     */
+    public function getUsage()
+    {
+        return $this->usage;
+    }
+
+    public function hasUsage()
+    {
+        return isset($this->usage);
+    }
+
+    public function clearUsage()
+    {
+        unset($this->usage);
+    }
+
+    /**
+     * Generated from protobuf field <code>.livekit.SimulationRun.Job.Usage usage = 13;</code>
+     * @param \Livekit\SimulationRun\Job\Usage $var
+     * @return $this
+     */
+    public function setUsage($var)
+    {
+        GPBUtil::checkMessage($var, \Livekit\SimulationRun\Job\Usage::class);
+        $this->usage = $var;
+
+        return $this;
+    }
+
+    /**
+     * Quality metrics for this job's call. Unset when the job produced none.
+     *
+     * Generated from protobuf field <code>.livekit.SimulationRun.JobMetrics metrics = 14;</code>
+     * @return \Livekit\SimulationRun\JobMetrics|null
+     */
+    public function getMetrics()
+    {
+        return $this->metrics;
+    }
+
+    public function hasMetrics()
+    {
+        return isset($this->metrics);
+    }
+
+    public function clearMetrics()
+    {
+        unset($this->metrics);
+    }
+
+    /**
+     * Quality metrics for this job's call. Unset when the job produced none.
+     *
+     * Generated from protobuf field <code>.livekit.SimulationRun.JobMetrics metrics = 14;</code>
+     * @param \Livekit\SimulationRun\JobMetrics $var
+     * @return $this
+     */
+    public function setMetrics($var)
+    {
+        GPBUtil::checkMessage($var, \Livekit\SimulationRun\JobMetrics::class);
+        $this->metrics = $var;
 
         return $this;
     }

@@ -25,6 +25,24 @@ interface CloudAgent
     /**
      *
      *
+     * Generated from protobuf method <code>livekit.CloudAgent/CreateAgentV2</code>
+     *
+     * @throws \Twirp\Error
+     */
+    public function CreateAgentV2(array $ctx, \Livekit\CreateAgentV2Request $req): \Livekit\CreateAgentV2Response;
+
+    /**
+     *
+     *
+     * Generated from protobuf method <code>livekit.CloudAgent/PromoteAgent</code>
+     *
+     * @throws \Twirp\Error
+     */
+    public function PromoteAgent(array $ctx, \Livekit\PromoteAgentRequest $req): \Livekit\PromoteAgentResponse;
+
+    /**
+     *
+     *
      * Generated from protobuf method <code>livekit.CloudAgent/ListAgents</code>
      *
      * @throws \Twirp\Error
@@ -75,6 +93,15 @@ interface CloudAgent
      * @throws \Twirp\Error
      */
     public function DeployAgent(array $ctx, \Livekit\DeployAgentRequest $req): \Livekit\DeployAgentResponse;
+
+    /**
+     *
+     *
+     * Generated from protobuf method <code>livekit.CloudAgent/DeployAgentV2</code>
+     *
+     * @throws \Twirp\Error
+     */
+    public function DeployAgentV2(array $ctx, \Livekit\DeployAgentV2Request $req): \Livekit\DeployAgentV2Response;
 
     /**
      *

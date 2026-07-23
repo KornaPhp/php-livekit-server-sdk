@@ -9,28 +9,18 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
+ * A named group of scenarios, mirroring a whole scenarios.yaml file.
+ *
  * Generated from protobuf message <code>livekit.ScenarioGroup</code>
  */
 class ScenarioGroup extends \Google\Protobuf\Internal\Message
 {
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      */
-    protected $id = '';
+    protected $name = '';
     /**
-     * Generated from protobuf field <code>string project_id = 2;</code>
-     */
-    protected $project_id = '';
-    /**
-     * Generated from protobuf field <code>string label = 3;</code>
-     */
-    protected $label = '';
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 4;</code>
-     */
-    protected $created_at = null;
-    /**
-     * Generated from protobuf field <code>repeated .livekit.Scenario scenarios = 5;</code>
+     * Generated from protobuf field <code>repeated .livekit.Scenario scenarios = 2;</code>
      */
     private $scenarios;
 
@@ -40,10 +30,7 @@ class ScenarioGroup extends \Google\Protobuf\Internal\Message
      * @param array $data {
      *     Optional. Data for populating the Message object.
      *
-     *     @type string $id
-     *     @type string $project_id
-     *     @type string $label
-     *     @type \Google\Protobuf\Timestamp $created_at
+     *     @type string $name
      *     @type \Livekit\Scenario[]|\Google\Protobuf\Internal\RepeatedField $scenarios
      * }
      */
@@ -53,105 +40,29 @@ class ScenarioGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @return string
      */
-    public function getId()
+    public function getName()
     {
-        return $this->id;
+        return $this->name;
     }
 
     /**
-     * Generated from protobuf field <code>string id = 1;</code>
+     * Generated from protobuf field <code>string name = 1;</code>
      * @param string $var
      * @return $this
      */
-    public function setId($var)
+    public function setName($var)
     {
         GPBUtil::checkString($var, True);
-        $this->id = $var;
+        $this->name = $var;
 
         return $this;
     }
 
     /**
-     * Generated from protobuf field <code>string project_id = 2;</code>
-     * @return string
-     */
-    public function getProjectId()
-    {
-        return $this->project_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string project_id = 2;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setProjectId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->project_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string label = 3;</code>
-     * @return string
-     */
-    public function getLabel()
-    {
-        return $this->label;
-    }
-
-    /**
-     * Generated from protobuf field <code>string label = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLabel($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->label = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 4;</code>
-     * @return \Google\Protobuf\Timestamp|null
-     */
-    public function getCreatedAt()
-    {
-        return $this->created_at;
-    }
-
-    public function hasCreatedAt()
-    {
-        return isset($this->created_at);
-    }
-
-    public function clearCreatedAt()
-    {
-        unset($this->created_at);
-    }
-
-    /**
-     * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 4;</code>
-     * @param \Google\Protobuf\Timestamp $var
-     * @return $this
-     */
-    public function setCreatedAt($var)
-    {
-        GPBUtil::checkMessage($var, \Google\Protobuf\Timestamp::class);
-        $this->created_at = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>repeated .livekit.Scenario scenarios = 5;</code>
+     * Generated from protobuf field <code>repeated .livekit.Scenario scenarios = 2;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
     public function getScenarios()
@@ -160,7 +71,7 @@ class ScenarioGroup extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>repeated .livekit.Scenario scenarios = 5;</code>
+     * Generated from protobuf field <code>repeated .livekit.Scenario scenarios = 2;</code>
      * @param \Livekit\Scenario[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this
      */

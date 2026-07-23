@@ -35,11 +35,11 @@ class SIPOutboundConfig extends \Google\Protobuf\Internal\Message
      * Username and password used to authenticate with SIP server.
      * May be empty to have no authentication.
      *
-     * Generated from protobuf field <code>string auth_username = 3 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_username = 3 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $auth_username = '';
     /**
-     * Generated from protobuf field <code>string auth_password = 4 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_password = 4 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      */
     protected $auth_password = '';
     /**
@@ -176,7 +176,7 @@ class SIPOutboundConfig extends \Google\Protobuf\Internal\Message
      * Username and password used to authenticate with SIP server.
      * May be empty to have no authentication.
      *
-     * Generated from protobuf field <code>string auth_username = 3 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_username = 3 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getAuthUsername()
@@ -188,7 +188,7 @@ class SIPOutboundConfig extends \Google\Protobuf\Internal\Message
      * Username and password used to authenticate with SIP server.
      * May be empty to have no authentication.
      *
-     * Generated from protobuf field <code>string auth_username = 3 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_username = 3 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -201,7 +201,7 @@ class SIPOutboundConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string auth_password = 4 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_password = 4 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      * @return string
      */
     public function getAuthPassword()
@@ -210,7 +210,7 @@ class SIPOutboundConfig extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string auth_password = 4 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_password = 4 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      * @param string $var
      * @return $this
      */

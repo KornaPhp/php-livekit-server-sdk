@@ -9,27 +9,19 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * containerize up to one audio and one video track
- *
  * Generated from protobuf message <code>livekit.TrackCompositeEgressRequest</code>
  */
 class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
 {
     /**
-     * required
-     *
      * Generated from protobuf field <code>string room_name = 1;</code>
      */
     protected $room_name = '';
     /**
-     * (optional)
-     *
      * Generated from protobuf field <code>string audio_track_id = 2 [(.logger.name) = "audioTrackID"];</code>
      */
     protected $audio_track_id = '';
     /**
-     * (optional)
-     *
      * Generated from protobuf field <code>string video_track_id = 3 [(.logger.name) = "videoTrackID"];</code>
      */
     protected $video_track_id = '';
@@ -50,8 +42,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
      */
     private $image_outputs;
     /**
-     * extra webhooks to call for this request
-     *
      * Generated from protobuf field <code>repeated .livekit.WebhookConfig webhooks = 15;</code>
      */
     private $webhooks;
@@ -65,24 +55,18 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
      *     Optional. Data for populating the Message object.
      *
      *     @type string $room_name
-     *           required
      *     @type string $audio_track_id
-     *           (optional)
      *     @type string $video_track_id
-     *           (optional)
      *     @type \Livekit\EncodedFileOutput $file
      *     @type \Livekit\StreamOutput $stream
      *     @type \Livekit\SegmentedFileOutput $segments
      *     @type int $preset
-     *           (default H264_720P_30)
      *     @type \Livekit\EncodingOptions $advanced
-     *           (optional)
      *     @type \Livekit\EncodedFileOutput[]|\Google\Protobuf\Internal\RepeatedField $file_outputs
      *     @type \Livekit\StreamOutput[]|\Google\Protobuf\Internal\RepeatedField $stream_outputs
      *     @type \Livekit\SegmentedFileOutput[]|\Google\Protobuf\Internal\RepeatedField $segment_outputs
      *     @type \Livekit\ImageOutput[]|\Google\Protobuf\Internal\RepeatedField $image_outputs
      *     @type \Livekit\WebhookConfig[]|\Google\Protobuf\Internal\RepeatedField $webhooks
-     *           extra webhooks to call for this request
      * }
      */
     public function __construct($data = NULL) {
@@ -91,8 +75,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * required
-     *
      * Generated from protobuf field <code>string room_name = 1;</code>
      * @return string
      */
@@ -102,8 +84,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * required
-     *
      * Generated from protobuf field <code>string room_name = 1;</code>
      * @param string $var
      * @return $this
@@ -117,8 +97,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional)
-     *
      * Generated from protobuf field <code>string audio_track_id = 2 [(.logger.name) = "audioTrackID"];</code>
      * @return string
      */
@@ -128,8 +106,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional)
-     *
      * Generated from protobuf field <code>string audio_track_id = 2 [(.logger.name) = "audioTrackID"];</code>
      * @param string $var
      * @return $this
@@ -143,8 +119,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional)
-     *
      * Generated from protobuf field <code>string video_track_id = 3 [(.logger.name) = "videoTrackID"];</code>
      * @return string
      */
@@ -154,8 +128,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional)
-     *
      * Generated from protobuf field <code>string video_track_id = 3 [(.logger.name) = "videoTrackID"];</code>
      * @param string $var
      * @return $this
@@ -265,8 +237,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (default H264_720P_30)
-     *
      * Generated from protobuf field <code>.livekit.EncodingOptionsPreset preset = 6;</code>
      * @return int
      */
@@ -281,8 +251,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (default H264_720P_30)
-     *
      * Generated from protobuf field <code>.livekit.EncodingOptionsPreset preset = 6;</code>
      * @param int $var
      * @return $this
@@ -296,8 +264,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional)
-     *
      * Generated from protobuf field <code>.livekit.EncodingOptions advanced = 7;</code>
      * @return \Livekit\EncodingOptions|null
      */
@@ -312,8 +278,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * (optional)
-     *
      * Generated from protobuf field <code>.livekit.EncodingOptions advanced = 7;</code>
      * @param \Livekit\EncodingOptions $var
      * @return $this
@@ -415,8 +379,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * extra webhooks to call for this request
-     *
      * Generated from protobuf field <code>repeated .livekit.WebhookConfig webhooks = 15;</code>
      * @return \Google\Protobuf\Internal\RepeatedField
      */
@@ -426,8 +388,6 @@ class TrackCompositeEgressRequest extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * extra webhooks to call for this request
-     *
      * Generated from protobuf field <code>repeated .livekit.WebhookConfig webhooks = 15;</code>
      * @param \Livekit\WebhookConfig[]|\Google\Protobuf\Internal\RepeatedField $var
      * @return $this

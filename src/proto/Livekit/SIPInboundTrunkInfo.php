@@ -26,7 +26,7 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
     /**
      * User-defined metadata for the Trunk.
      *
-     * Generated from protobuf field <code>string metadata = 3 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string metadata = 3 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $metadata = '';
     /**
@@ -54,17 +54,21 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
      * Username and password used to authenticate inbound SIP invites.
      * May be empty to have no authentication.
      *
-     * Generated from protobuf field <code>string auth_username = 7 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_username = 7 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $auth_username = '';
     /**
-     * Generated from protobuf field <code>string auth_password = 8 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_password = 8 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      */
     protected $auth_password = '';
     /**
+     * Generated from protobuf field <code>string auth_realm = 19;</code>
+     */
+    protected $auth_realm = '';
+    /**
      * Include these SIP X-* headers in 200 OK responses.
      *
-     * Generated from protobuf field <code>map<string, string> headers = 9 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>map<string, string> headers = 9 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     private $headers;
     /**
@@ -106,9 +110,14 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
      */
     protected $krisp_enabled = false;
     /**
-     * Generated from protobuf field <code>.livekit.SIPMediaEncryption media_encryption = 16;</code>
+     * Generated from protobuf field <code>.livekit.SIPMediaEncryption media_encryption = 16 [deprecated = true];</code>
+     * @deprecated
      */
     protected $media_encryption = 0;
+    /**
+     * Generated from protobuf field <code>.livekit.SIPMediaConfig media = 20;</code>
+     */
+    protected $media = null;
     /**
      * Generated from protobuf field <code>.google.protobuf.Timestamp created_at = 17;</code>
      */
@@ -142,6 +151,7 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
      *           Username and password used to authenticate inbound SIP invites.
      *           May be empty to have no authentication.
      *     @type string $auth_password
+     *     @type string $auth_realm
      *     @type array|\Google\Protobuf\Internal\MapField $headers
      *           Include these SIP X-* headers in 200 OK responses.
      *     @type array|\Google\Protobuf\Internal\MapField $headers_to_attributes
@@ -160,6 +170,7 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
      *           Max call duration.
      *     @type bool $krisp_enabled
      *     @type int $media_encryption
+     *     @type \Livekit\SIPMediaConfig $media
      *     @type \Google\Protobuf\Timestamp $created_at
      *     @type \Google\Protobuf\Timestamp $updated_at
      * }
@@ -220,7 +231,7 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
     /**
      * User-defined metadata for the Trunk.
      *
-     * Generated from protobuf field <code>string metadata = 3 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string metadata = 3 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getMetadata()
@@ -231,7 +242,7 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
     /**
      * User-defined metadata for the Trunk.
      *
-     * Generated from protobuf field <code>string metadata = 3 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string metadata = 3 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -331,7 +342,7 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
      * Username and password used to authenticate inbound SIP invites.
      * May be empty to have no authentication.
      *
-     * Generated from protobuf field <code>string auth_username = 7 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_username = 7 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getAuthUsername()
@@ -343,7 +354,7 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
      * Username and password used to authenticate inbound SIP invites.
      * May be empty to have no authentication.
      *
-     * Generated from protobuf field <code>string auth_username = 7 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_username = 7 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -356,7 +367,7 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string auth_password = 8 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_password = 8 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      * @return string
      */
     public function getAuthPassword()
@@ -365,7 +376,7 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string auth_password = 8 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string auth_password = 8 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      * @param string $var
      * @return $this
      */
@@ -378,9 +389,31 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
+     * Generated from protobuf field <code>string auth_realm = 19;</code>
+     * @return string
+     */
+    public function getAuthRealm()
+    {
+        return $this->auth_realm;
+    }
+
+    /**
+     * Generated from protobuf field <code>string auth_realm = 19;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setAuthRealm($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->auth_realm = $var;
+
+        return $this;
+    }
+
+    /**
      * Include these SIP X-* headers in 200 OK responses.
      *
-     * Generated from protobuf field <code>map<string, string> headers = 9 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>map<string, string> headers = 9 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getHeaders()
@@ -391,7 +424,7 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
     /**
      * Include these SIP X-* headers in 200 OK responses.
      *
-     * Generated from protobuf field <code>map<string, string> headers = 9 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>map<string, string> headers = 9 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -584,23 +617,59 @@ class SIPInboundTrunkInfo extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>.livekit.SIPMediaEncryption media_encryption = 16;</code>
+     * Generated from protobuf field <code>.livekit.SIPMediaEncryption media_encryption = 16 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getMediaEncryption()
     {
+        @trigger_error('media_encryption is deprecated.', E_USER_DEPRECATED);
         return $this->media_encryption;
     }
 
     /**
-     * Generated from protobuf field <code>.livekit.SIPMediaEncryption media_encryption = 16;</code>
+     * Generated from protobuf field <code>.livekit.SIPMediaEncryption media_encryption = 16 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setMediaEncryption($var)
     {
+        @trigger_error('media_encryption is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Livekit\SIPMediaEncryption::class);
         $this->media_encryption = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.livekit.SIPMediaConfig media = 20;</code>
+     * @return \Livekit\SIPMediaConfig|null
+     */
+    public function getMedia()
+    {
+        return $this->media;
+    }
+
+    public function hasMedia()
+    {
+        return isset($this->media);
+    }
+
+    public function clearMedia()
+    {
+        unset($this->media);
+    }
+
+    /**
+     * Generated from protobuf field <code>.livekit.SIPMediaConfig media = 20;</code>
+     * @param \Livekit\SIPMediaConfig $var
+     * @return $this
+     */
+    public function setMedia($var)
+    {
+        GPBUtil::checkMessage($var, \Livekit\SIPMediaConfig::class);
+        $this->media = $var;
 
         return $this;
     }

@@ -103,6 +103,52 @@ abstract class CloudAgentAbstractClient
     /**
      * {@inheritdoc}
      */
+    public function CreateAgentV2(array $ctx, \Livekit\CreateAgentV2Request $in): \Livekit\CreateAgentV2Response
+    {
+        $ctx = Context::withPackageName($ctx, 'livekit');
+        $ctx = Context::withServiceName($ctx, 'CloudAgent');
+        $ctx = Context::withMethodName($ctx, 'CreateAgentV2');
+
+        $out = new \Livekit\CreateAgentV2Response();
+
+        $url = $this->addr;
+        if (empty($this->prefix)) {
+            $url = $url.'/livekit.CloudAgent/CreateAgentV2';
+        } else {
+            $url = $url.'/'.$this->prefix.'/livekit.CloudAgent/CreateAgentV2';
+        }
+
+        $this->doRequest($ctx, $url, $in, $out);
+
+        return $out;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function PromoteAgent(array $ctx, \Livekit\PromoteAgentRequest $in): \Livekit\PromoteAgentResponse
+    {
+        $ctx = Context::withPackageName($ctx, 'livekit');
+        $ctx = Context::withServiceName($ctx, 'CloudAgent');
+        $ctx = Context::withMethodName($ctx, 'PromoteAgent');
+
+        $out = new \Livekit\PromoteAgentResponse();
+
+        $url = $this->addr;
+        if (empty($this->prefix)) {
+            $url = $url.'/livekit.CloudAgent/PromoteAgent';
+        } else {
+            $url = $url.'/'.$this->prefix.'/livekit.CloudAgent/PromoteAgent';
+        }
+
+        $this->doRequest($ctx, $url, $in, $out);
+
+        return $out;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function ListAgents(array $ctx, \Livekit\ListAgentsRequest $in): \Livekit\ListAgentsResponse
     {
         $ctx = Context::withPackageName($ctx, 'livekit');
@@ -231,6 +277,29 @@ abstract class CloudAgentAbstractClient
             $url = $url.'/livekit.CloudAgent/DeployAgent';
         } else {
             $url = $url.'/'.$this->prefix.'/livekit.CloudAgent/DeployAgent';
+        }
+
+        $this->doRequest($ctx, $url, $in, $out);
+
+        return $out;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function DeployAgentV2(array $ctx, \Livekit\DeployAgentV2Request $in): \Livekit\DeployAgentV2Response
+    {
+        $ctx = Context::withPackageName($ctx, 'livekit');
+        $ctx = Context::withServiceName($ctx, 'CloudAgent');
+        $ctx = Context::withMethodName($ctx, 'DeployAgentV2');
+
+        $out = new \Livekit\DeployAgentV2Response();
+
+        $url = $this->addr;
+        if (empty($this->prefix)) {
+            $url = $url.'/livekit.CloudAgent/DeployAgentV2';
+        } else {
+            $url = $url.'/'.$this->prefix.'/livekit.CloudAgent/DeployAgentV2';
         }
 
         $this->doRequest($ctx, $url, $in, $out);

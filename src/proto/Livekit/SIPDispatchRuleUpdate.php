@@ -26,17 +26,22 @@ class SIPDispatchRuleUpdate extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
-     * Generated from protobuf field <code>optional string metadata = 4 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>optional string metadata = 4 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $metadata = null;
     /**
-     * Generated from protobuf field <code>map<string, string> attributes = 5 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>map<string, string> attributes = 5 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     private $attributes;
     /**
-     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 6;</code>
+     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 6 [deprecated = true];</code>
+     * @deprecated
      */
     protected $media_encryption = null;
+    /**
+     * Generated from protobuf field <code>.livekit.SIPMediaConfig media = 7;</code>
+     */
+    protected $media = null;
 
     /**
      * Constructor.
@@ -50,6 +55,7 @@ class SIPDispatchRuleUpdate extends \Google\Protobuf\Internal\Message
      *     @type string $metadata
      *     @type array|\Google\Protobuf\Internal\MapField $attributes
      *     @type int $media_encryption
+     *     @type \Livekit\SIPMediaConfig $media
      * }
      */
     public function __construct($data = NULL) {
@@ -154,7 +160,7 @@ class SIPDispatchRuleUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional string metadata = 4 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>optional string metadata = 4 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getMetadata()
@@ -173,7 +179,7 @@ class SIPDispatchRuleUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional string metadata = 4 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>optional string metadata = 4 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -186,7 +192,7 @@ class SIPDispatchRuleUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> attributes = 5 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>map<string, string> attributes = 5 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return \Google\Protobuf\Internal\MapField
      */
     public function getAttributes()
@@ -195,7 +201,7 @@ class SIPDispatchRuleUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>map<string, string> attributes = 5 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>map<string, string> attributes = 5 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param array|\Google\Protobuf\Internal\MapField $var
      * @return $this
      */
@@ -208,33 +214,71 @@ class SIPDispatchRuleUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 6;</code>
+     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 6 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getMediaEncryption()
     {
+        @trigger_error('media_encryption is deprecated.', E_USER_DEPRECATED);
         return isset($this->media_encryption) ? $this->media_encryption : 0;
     }
 
     public function hasMediaEncryption()
     {
+        @trigger_error('media_encryption is deprecated.', E_USER_DEPRECATED);
         return isset($this->media_encryption);
     }
 
     public function clearMediaEncryption()
     {
+        @trigger_error('media_encryption is deprecated.', E_USER_DEPRECATED);
         unset($this->media_encryption);
     }
 
     /**
-     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 6;</code>
+     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 6 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setMediaEncryption($var)
     {
+        @trigger_error('media_encryption is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Livekit\SIPMediaEncryption::class);
         $this->media_encryption = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.livekit.SIPMediaConfig media = 7;</code>
+     * @return \Livekit\SIPMediaConfig|null
+     */
+    public function getMedia()
+    {
+        return $this->media;
+    }
+
+    public function hasMedia()
+    {
+        return isset($this->media);
+    }
+
+    public function clearMedia()
+    {
+        unset($this->media);
+    }
+
+    /**
+     * Generated from protobuf field <code>.livekit.SIPMediaConfig media = 7;</code>
+     * @param \Livekit\SIPMediaConfig $var
+     * @return $this
+     */
+    public function setMedia($var)
+    {
+        GPBUtil::checkMessage($var, \Livekit\SIPMediaConfig::class);
+        $this->media = $var;
 
         return $this;
     }

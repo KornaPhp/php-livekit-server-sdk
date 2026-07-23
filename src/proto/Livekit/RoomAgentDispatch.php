@@ -18,9 +18,23 @@ class RoomAgentDispatch extends \Google\Protobuf\Internal\Message
      */
     protected $agent_name = '';
     /**
-     * Generated from protobuf field <code>string metadata = 2 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string metadata = 2 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $metadata = '';
+    /**
+     * cloud only
+     *
+     * Generated from protobuf field <code>.livekit.JobRestartPolicy restart_policy = 3;</code>
+     */
+    protected $restart_policy = 0;
+    /**
+     * Generated from protobuf field <code>string deployment = 4;</code>
+     */
+    protected $deployment = '';
+    /**
+     * Generated from protobuf field <code>map<string, string> attributes = 5 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
+     */
+    private $attributes;
 
     /**
      * Constructor.
@@ -30,6 +44,10 @@ class RoomAgentDispatch extends \Google\Protobuf\Internal\Message
      *
      *     @type string $agent_name
      *     @type string $metadata
+     *     @type int $restart_policy
+     *           cloud only
+     *     @type string $deployment
+     *     @type array|\Google\Protobuf\Internal\MapField $attributes
      * }
      */
     public function __construct($data = NULL) {
@@ -60,7 +78,7 @@ class RoomAgentDispatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string metadata = 2 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string metadata = 2 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getMetadata()
@@ -69,7 +87,7 @@ class RoomAgentDispatch extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string metadata = 2 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string metadata = 2 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -77,6 +95,76 @@ class RoomAgentDispatch extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * cloud only
+     *
+     * Generated from protobuf field <code>.livekit.JobRestartPolicy restart_policy = 3;</code>
+     * @return int
+     */
+    public function getRestartPolicy()
+    {
+        return $this->restart_policy;
+    }
+
+    /**
+     * cloud only
+     *
+     * Generated from protobuf field <code>.livekit.JobRestartPolicy restart_policy = 3;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setRestartPolicy($var)
+    {
+        GPBUtil::checkEnum($var, \Livekit\JobRestartPolicy::class);
+        $this->restart_policy = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string deployment = 4;</code>
+     * @return string
+     */
+    public function getDeployment()
+    {
+        return $this->deployment;
+    }
+
+    /**
+     * Generated from protobuf field <code>string deployment = 4;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDeployment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->deployment = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> attributes = 5 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> attributes = 5 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setAttributes($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->attributes = $arr;
 
         return $this;
     }

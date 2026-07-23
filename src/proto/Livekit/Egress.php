@@ -14,7 +14,53 @@ namespace Livekit;
 interface Egress
 {
     /**
-     * start recording or streaming a room, participant, or tracks
+     * Unified StartEgress RPC
+     *
+     * Generated from protobuf method <code>livekit.Egress/StartEgress</code>
+     *
+     * @throws \Twirp\Error
+     */
+    public function StartEgress(array $ctx, \Livekit\StartEgressRequest $req): \Livekit\EgressInfo;
+
+    /**
+     * Update url/template or stream outputs
+     * rpc UpdateEgress(UpdateEgressRequest) returns (EgressInfo);
+     *
+     * Generated from protobuf method <code>livekit.Egress/UpdateLayout</code>
+     *
+     * @throws \Twirp\Error
+     */
+    public function UpdateLayout(array $ctx, \Livekit\UpdateLayoutRequest $req): \Livekit\EgressInfo;
+
+    /**
+     *
+     *
+     * Generated from protobuf method <code>livekit.Egress/UpdateStream</code>
+     *
+     * @throws \Twirp\Error
+     */
+    public function UpdateStream(array $ctx, \Livekit\UpdateStreamRequest $req): \Livekit\EgressInfo;
+
+    /**
+     * List available egress
+     *
+     * Generated from protobuf method <code>livekit.Egress/ListEgress</code>
+     *
+     * @throws \Twirp\Error
+     */
+    public function ListEgress(array $ctx, \Livekit\ListEgressRequest $req): \Livekit\ListEgressResponse;
+
+    /**
+     * Stop a recording or stream
+     *
+     * Generated from protobuf method <code>livekit.Egress/StopEgress</code>
+     *
+     * @throws \Twirp\Error
+     */
+    public function StopEgress(array $ctx, \Livekit\StopEgressRequest $req): \Livekit\EgressInfo;
+
+    /**
+     * TODO: deprecate
      *
      * Generated from protobuf method <code>livekit.Egress/StartRoomCompositeEgress</code>
      *
@@ -57,40 +103,4 @@ interface Egress
      * @throws \Twirp\Error
      */
     public function StartTrackEgress(array $ctx, \Livekit\TrackEgressRequest $req): \Livekit\EgressInfo;
-
-    /**
-     * update web composite layout
-     *
-     * Generated from protobuf method <code>livekit.Egress/UpdateLayout</code>
-     *
-     * @throws \Twirp\Error
-     */
-    public function UpdateLayout(array $ctx, \Livekit\UpdateLayoutRequest $req): \Livekit\EgressInfo;
-
-    /**
-     * add or remove stream endpoints
-     *
-     * Generated from protobuf method <code>livekit.Egress/UpdateStream</code>
-     *
-     * @throws \Twirp\Error
-     */
-    public function UpdateStream(array $ctx, \Livekit\UpdateStreamRequest $req): \Livekit\EgressInfo;
-
-    /**
-     * list available egress
-     *
-     * Generated from protobuf method <code>livekit.Egress/ListEgress</code>
-     *
-     * @throws \Twirp\Error
-     */
-    public function ListEgress(array $ctx, \Livekit\ListEgressRequest $req): \Livekit\ListEgressResponse;
-
-    /**
-     * stop a recording or stream
-     *
-     * Generated from protobuf method <code>livekit.Egress/StopEgress</code>
-     *
-     * @throws \Twirp\Error
-     */
-    public function StopEgress(array $ctx, \Livekit\StopEgressRequest $req): \Livekit\EgressInfo;
 }

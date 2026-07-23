@@ -39,7 +39,7 @@ class Job extends \Google\Protobuf\Internal\Message
      */
     protected $namespace = '';
     /**
-     * Generated from protobuf field <code>string metadata = 6;</code>
+     * Generated from protobuf field <code>string metadata = 6 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $metadata = '';
     /**
@@ -54,6 +54,18 @@ class Job extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>bool enable_recording = 10;</code>
      */
     protected $enable_recording = false;
+    /**
+     * Generated from protobuf field <code>string deployment = 11;</code>
+     */
+    protected $deployment = '';
+    /**
+     * Generated from protobuf field <code>map<string, string> attributes = 12 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
+     */
+    private $attributes;
+    /**
+     * Generated from protobuf field <code>bool enable_redaction = 13;</code>
+     */
+    protected $enable_redaction = false;
 
     /**
      * Constructor.
@@ -71,6 +83,9 @@ class Job extends \Google\Protobuf\Internal\Message
      *     @type string $agent_name
      *     @type \Livekit\JobState $state
      *     @type bool $enable_recording
+     *     @type string $deployment
+     *     @type array|\Google\Protobuf\Internal\MapField $attributes
+     *     @type bool $enable_redaction
      * }
      */
     public function __construct($data = NULL) {
@@ -235,7 +250,7 @@ class Job extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string metadata = 6;</code>
+     * Generated from protobuf field <code>string metadata = 6 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getMetadata()
@@ -244,7 +259,7 @@ class Job extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string metadata = 6;</code>
+     * Generated from protobuf field <code>string metadata = 6 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -328,6 +343,72 @@ class Job extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkBool($var);
         $this->enable_recording = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>string deployment = 11;</code>
+     * @return string
+     */
+    public function getDeployment()
+    {
+        return $this->deployment;
+    }
+
+    /**
+     * Generated from protobuf field <code>string deployment = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setDeployment($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->deployment = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> attributes = 12 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getAttributes()
+    {
+        return $this->attributes;
+    }
+
+    /**
+     * Generated from protobuf field <code>map<string, string> attributes = 12 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setAttributes($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->attributes = $arr;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool enable_redaction = 13;</code>
+     * @return bool
+     */
+    public function getEnableRedaction()
+    {
+        return $this->enable_redaction;
+    }
+
+    /**
+     * Generated from protobuf field <code>bool enable_redaction = 13;</code>
+     * @param bool $var
+     * @return $this
+     */
+    public function setEnableRedaction($var)
+    {
+        GPBUtil::checkBool($var);
+        $this->enable_redaction = $var;
 
         return $this;
     }

@@ -80,6 +80,121 @@ abstract class EgressAbstractClient
     /**
      * {@inheritdoc}
      */
+    public function StartEgress(array $ctx, \Livekit\StartEgressRequest $in): \Livekit\EgressInfo
+    {
+        $ctx = Context::withPackageName($ctx, 'livekit');
+        $ctx = Context::withServiceName($ctx, 'Egress');
+        $ctx = Context::withMethodName($ctx, 'StartEgress');
+
+        $out = new \Livekit\EgressInfo();
+
+        $url = $this->addr;
+        if (empty($this->prefix)) {
+            $url = $url.'/livekit.Egress/StartEgress';
+        } else {
+            $url = $url.'/'.$this->prefix.'/livekit.Egress/StartEgress';
+        }
+
+        $this->doRequest($ctx, $url, $in, $out);
+
+        return $out;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function UpdateLayout(array $ctx, \Livekit\UpdateLayoutRequest $in): \Livekit\EgressInfo
+    {
+        $ctx = Context::withPackageName($ctx, 'livekit');
+        $ctx = Context::withServiceName($ctx, 'Egress');
+        $ctx = Context::withMethodName($ctx, 'UpdateLayout');
+
+        $out = new \Livekit\EgressInfo();
+
+        $url = $this->addr;
+        if (empty($this->prefix)) {
+            $url = $url.'/livekit.Egress/UpdateLayout';
+        } else {
+            $url = $url.'/'.$this->prefix.'/livekit.Egress/UpdateLayout';
+        }
+
+        $this->doRequest($ctx, $url, $in, $out);
+
+        return $out;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function UpdateStream(array $ctx, \Livekit\UpdateStreamRequest $in): \Livekit\EgressInfo
+    {
+        $ctx = Context::withPackageName($ctx, 'livekit');
+        $ctx = Context::withServiceName($ctx, 'Egress');
+        $ctx = Context::withMethodName($ctx, 'UpdateStream');
+
+        $out = new \Livekit\EgressInfo();
+
+        $url = $this->addr;
+        if (empty($this->prefix)) {
+            $url = $url.'/livekit.Egress/UpdateStream';
+        } else {
+            $url = $url.'/'.$this->prefix.'/livekit.Egress/UpdateStream';
+        }
+
+        $this->doRequest($ctx, $url, $in, $out);
+
+        return $out;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function ListEgress(array $ctx, \Livekit\ListEgressRequest $in): \Livekit\ListEgressResponse
+    {
+        $ctx = Context::withPackageName($ctx, 'livekit');
+        $ctx = Context::withServiceName($ctx, 'Egress');
+        $ctx = Context::withMethodName($ctx, 'ListEgress');
+
+        $out = new \Livekit\ListEgressResponse();
+
+        $url = $this->addr;
+        if (empty($this->prefix)) {
+            $url = $url.'/livekit.Egress/ListEgress';
+        } else {
+            $url = $url.'/'.$this->prefix.'/livekit.Egress/ListEgress';
+        }
+
+        $this->doRequest($ctx, $url, $in, $out);
+
+        return $out;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
+    public function StopEgress(array $ctx, \Livekit\StopEgressRequest $in): \Livekit\EgressInfo
+    {
+        $ctx = Context::withPackageName($ctx, 'livekit');
+        $ctx = Context::withServiceName($ctx, 'Egress');
+        $ctx = Context::withMethodName($ctx, 'StopEgress');
+
+        $out = new \Livekit\EgressInfo();
+
+        $url = $this->addr;
+        if (empty($this->prefix)) {
+            $url = $url.'/livekit.Egress/StopEgress';
+        } else {
+            $url = $url.'/'.$this->prefix.'/livekit.Egress/StopEgress';
+        }
+
+        $this->doRequest($ctx, $url, $in, $out);
+
+        return $out;
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     public function StartRoomCompositeEgress(array $ctx, \Livekit\RoomCompositeEgressRequest $in): \Livekit\EgressInfo
     {
         $ctx = Context::withPackageName($ctx, 'livekit');
@@ -185,98 +300,6 @@ abstract class EgressAbstractClient
             $url = $url.'/livekit.Egress/StartTrackEgress';
         } else {
             $url = $url.'/'.$this->prefix.'/livekit.Egress/StartTrackEgress';
-        }
-
-        $this->doRequest($ctx, $url, $in, $out);
-
-        return $out;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function UpdateLayout(array $ctx, \Livekit\UpdateLayoutRequest $in): \Livekit\EgressInfo
-    {
-        $ctx = Context::withPackageName($ctx, 'livekit');
-        $ctx = Context::withServiceName($ctx, 'Egress');
-        $ctx = Context::withMethodName($ctx, 'UpdateLayout');
-
-        $out = new \Livekit\EgressInfo();
-
-        $url = $this->addr;
-        if (empty($this->prefix)) {
-            $url = $url.'/livekit.Egress/UpdateLayout';
-        } else {
-            $url = $url.'/'.$this->prefix.'/livekit.Egress/UpdateLayout';
-        }
-
-        $this->doRequest($ctx, $url, $in, $out);
-
-        return $out;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function UpdateStream(array $ctx, \Livekit\UpdateStreamRequest $in): \Livekit\EgressInfo
-    {
-        $ctx = Context::withPackageName($ctx, 'livekit');
-        $ctx = Context::withServiceName($ctx, 'Egress');
-        $ctx = Context::withMethodName($ctx, 'UpdateStream');
-
-        $out = new \Livekit\EgressInfo();
-
-        $url = $this->addr;
-        if (empty($this->prefix)) {
-            $url = $url.'/livekit.Egress/UpdateStream';
-        } else {
-            $url = $url.'/'.$this->prefix.'/livekit.Egress/UpdateStream';
-        }
-
-        $this->doRequest($ctx, $url, $in, $out);
-
-        return $out;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function ListEgress(array $ctx, \Livekit\ListEgressRequest $in): \Livekit\ListEgressResponse
-    {
-        $ctx = Context::withPackageName($ctx, 'livekit');
-        $ctx = Context::withServiceName($ctx, 'Egress');
-        $ctx = Context::withMethodName($ctx, 'ListEgress');
-
-        $out = new \Livekit\ListEgressResponse();
-
-        $url = $this->addr;
-        if (empty($this->prefix)) {
-            $url = $url.'/livekit.Egress/ListEgress';
-        } else {
-            $url = $url.'/'.$this->prefix.'/livekit.Egress/ListEgress';
-        }
-
-        $this->doRequest($ctx, $url, $in, $out);
-
-        return $out;
-    }
-
-    /**
-     * {@inheritdoc}
-     */
-    public function StopEgress(array $ctx, \Livekit\StopEgressRequest $in): \Livekit\EgressInfo
-    {
-        $ctx = Context::withPackageName($ctx, 'livekit');
-        $ctx = Context::withServiceName($ctx, 'Egress');
-        $ctx = Context::withMethodName($ctx, 'StopEgress');
-
-        $out = new \Livekit\EgressInfo();
-
-        $url = $this->addr;
-        if (empty($this->prefix)) {
-            $url = $url.'/livekit.Egress/StopEgress';
-        } else {
-            $url = $url.'/'.$this->prefix.'/livekit.Egress/StopEgress';
         }
 
         $this->doRequest($ctx, $url, $in, $out);

@@ -30,11 +30,11 @@ class SIPOutboundTrunkUpdate extends \Google\Protobuf\Internal\Message
      */
     protected $numbers = null;
     /**
-     * Generated from protobuf field <code>optional string auth_username = 4 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>optional string auth_username = 4 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $auth_username = null;
     /**
-     * Generated from protobuf field <code>optional string auth_password = 5 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>optional string auth_password = 5 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      */
     protected $auth_password = null;
     /**
@@ -42,13 +42,18 @@ class SIPOutboundTrunkUpdate extends \Google\Protobuf\Internal\Message
      */
     protected $name = null;
     /**
-     * Generated from protobuf field <code>optional string metadata = 7 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>optional string metadata = 7 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $metadata = null;
     /**
-     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 8;</code>
+     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 8 [deprecated = true];</code>
+     * @deprecated
      */
     protected $media_encryption = null;
+    /**
+     * Generated from protobuf field <code>.livekit.SIPMediaConfig media = 11;</code>
+     */
+    protected $media = null;
     /**
      * Generated from protobuf field <code>optional string from_host = 10;</code>
      */
@@ -69,6 +74,7 @@ class SIPOutboundTrunkUpdate extends \Google\Protobuf\Internal\Message
      *     @type string $name
      *     @type string $metadata
      *     @type int $media_encryption
+     *     @type \Livekit\SIPMediaConfig $media
      *     @type string $from_host
      * }
      */
@@ -206,7 +212,7 @@ class SIPOutboundTrunkUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional string auth_username = 4 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>optional string auth_username = 4 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getAuthUsername()
@@ -225,7 +231,7 @@ class SIPOutboundTrunkUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional string auth_username = 4 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>optional string auth_username = 4 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -238,7 +244,7 @@ class SIPOutboundTrunkUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional string auth_password = 5 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>optional string auth_password = 5 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      * @return string
      */
     public function getAuthPassword()
@@ -257,7 +263,7 @@ class SIPOutboundTrunkUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional string auth_password = 5 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>optional string auth_password = 5 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      * @param string $var
      * @return $this
      */
@@ -302,7 +308,7 @@ class SIPOutboundTrunkUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional string metadata = 7 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>optional string metadata = 7 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getMetadata()
@@ -321,7 +327,7 @@ class SIPOutboundTrunkUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional string metadata = 7 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>optional string metadata = 7 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -334,33 +340,71 @@ class SIPOutboundTrunkUpdate extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 8;</code>
+     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 8 [deprecated = true];</code>
      * @return int
+     * @deprecated
      */
     public function getMediaEncryption()
     {
+        @trigger_error('media_encryption is deprecated.', E_USER_DEPRECATED);
         return isset($this->media_encryption) ? $this->media_encryption : 0;
     }
 
     public function hasMediaEncryption()
     {
+        @trigger_error('media_encryption is deprecated.', E_USER_DEPRECATED);
         return isset($this->media_encryption);
     }
 
     public function clearMediaEncryption()
     {
+        @trigger_error('media_encryption is deprecated.', E_USER_DEPRECATED);
         unset($this->media_encryption);
     }
 
     /**
-     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 8;</code>
+     * Generated from protobuf field <code>optional .livekit.SIPMediaEncryption media_encryption = 8 [deprecated = true];</code>
      * @param int $var
      * @return $this
+     * @deprecated
      */
     public function setMediaEncryption($var)
     {
+        @trigger_error('media_encryption is deprecated.', E_USER_DEPRECATED);
         GPBUtil::checkEnum($var, \Livekit\SIPMediaEncryption::class);
         $this->media_encryption = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.livekit.SIPMediaConfig media = 11;</code>
+     * @return \Livekit\SIPMediaConfig|null
+     */
+    public function getMedia()
+    {
+        return $this->media;
+    }
+
+    public function hasMedia()
+    {
+        return isset($this->media);
+    }
+
+    public function clearMedia()
+    {
+        unset($this->media);
+    }
+
+    /**
+     * Generated from protobuf field <code>.livekit.SIPMediaConfig media = 11;</code>
+     * @param \Livekit\SIPMediaConfig $var
+     * @return $this
+     */
+    public function setMedia($var)
+    {
+        GPBUtil::checkMessage($var, \Livekit\SIPMediaConfig::class);
+        $this->media = $var;
 
         return $this;
     }

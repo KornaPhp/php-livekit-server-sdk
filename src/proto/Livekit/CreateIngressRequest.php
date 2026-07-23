@@ -44,13 +44,13 @@ class CreateIngressRequest extends \Google\Protobuf\Internal\Message
     /**
      * name of publishing participant (used for display only)
      *
-     * Generated from protobuf field <code>string participant_name = 5 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string participant_name = 5 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $participant_name = '';
     /**
      * metadata associated with the publishing participant
      *
-     * Generated from protobuf field <code>string participant_metadata = 10 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string participant_metadata = 10 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $participant_metadata = '';
     /**
@@ -244,7 +244,7 @@ class CreateIngressRequest extends \Google\Protobuf\Internal\Message
     /**
      * name of publishing participant (used for display only)
      *
-     * Generated from protobuf field <code>string participant_name = 5 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string participant_name = 5 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getParticipantName()
@@ -255,7 +255,7 @@ class CreateIngressRequest extends \Google\Protobuf\Internal\Message
     /**
      * name of publishing participant (used for display only)
      *
-     * Generated from protobuf field <code>string participant_name = 5 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string participant_name = 5 [(.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -270,7 +270,7 @@ class CreateIngressRequest extends \Google\Protobuf\Internal\Message
     /**
      * metadata associated with the publishing participant
      *
-     * Generated from protobuf field <code>string participant_metadata = 10 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string participant_metadata = 10 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getParticipantMetadata()
@@ -281,7 +281,7 @@ class CreateIngressRequest extends \Google\Protobuf\Internal\Message
     /**
      * metadata associated with the publishing participant
      *
-     * Generated from protobuf field <code>string participant_metadata = 10 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string participant_metadata = 10 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */

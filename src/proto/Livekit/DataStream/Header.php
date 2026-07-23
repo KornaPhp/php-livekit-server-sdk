@@ -54,6 +54,16 @@ class Header extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>map<string, string> attributes = 8;</code>
      */
     private $attributes;
+    /**
+     * Optional inline content so that a data stream can be sent as a single packet for short payloads.
+     *
+     * Generated from protobuf field <code>optional bytes inline_content = 11;</code>
+     */
+    protected $inline_content = null;
+    /**
+     * Generated from protobuf field <code>.livekit.DataStream.CompressionType compression = 12;</code>
+     */
+    protected $compression = 0;
     protected $content_header;
 
     /**
@@ -76,6 +86,9 @@ class Header extends \Google\Protobuf\Internal\Message
      *           user defined attributes map that can carry additional info
      *     @type \Livekit\DataStream\TextHeader $text_header
      *     @type \Livekit\DataStream\ByteHeader $byte_header
+     *     @type string $inline_content
+     *           Optional inline content so that a data stream can be sent as a single packet for short payloads.
+     *     @type int $compression
      * }
      */
     public function __construct($data = NULL) {
@@ -321,6 +334,64 @@ class Header extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkMessage($var, \Livekit\DataStream\ByteHeader::class);
         $this->writeOneof(10, $var);
+
+        return $this;
+    }
+
+    /**
+     * Optional inline content so that a data stream can be sent as a single packet for short payloads.
+     *
+     * Generated from protobuf field <code>optional bytes inline_content = 11;</code>
+     * @return string
+     */
+    public function getInlineContent()
+    {
+        return isset($this->inline_content) ? $this->inline_content : '';
+    }
+
+    public function hasInlineContent()
+    {
+        return isset($this->inline_content);
+    }
+
+    public function clearInlineContent()
+    {
+        unset($this->inline_content);
+    }
+
+    /**
+     * Optional inline content so that a data stream can be sent as a single packet for short payloads.
+     *
+     * Generated from protobuf field <code>optional bytes inline_content = 11;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setInlineContent($var)
+    {
+        GPBUtil::checkString($var, False);
+        $this->inline_content = $var;
+
+        return $this;
+    }
+
+    /**
+     * Generated from protobuf field <code>.livekit.DataStream.CompressionType compression = 12;</code>
+     * @return int
+     */
+    public function getCompression()
+    {
+        return $this->compression;
+    }
+
+    /**
+     * Generated from protobuf field <code>.livekit.DataStream.CompressionType compression = 12;</code>
+     * @param int $var
+     * @return $this
+     */
+    public function setCompression($var)
+    {
+        GPBUtil::checkEnum($var, \Livekit\DataStream\CompressionType::class);
+        $this->compression = $var;
 
         return $this;
     }

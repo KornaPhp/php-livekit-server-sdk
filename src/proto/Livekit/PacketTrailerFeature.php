@@ -15,9 +15,19 @@ class PacketTrailerFeature
      * Generated from protobuf enum <code>PTF_USER_TIMESTAMP = 0;</code>
      */
     const PTF_USER_TIMESTAMP = 0;
+    /**
+     * Generated from protobuf enum <code>PTF_FRAME_ID = 1;</code>
+     */
+    const PTF_FRAME_ID = 1;
+    /**
+     * Generated from protobuf enum <code>PTF_USER_DATA = 2;</code>
+     */
+    const PTF_USER_DATA = 2;
 
     private static $valueToName = [
         self::PTF_USER_TIMESTAMP => 'PTF_USER_TIMESTAMP',
+        self::PTF_FRAME_ID => 'PTF_FRAME_ID',
+        self::PTF_USER_DATA => 'PTF_USER_DATA',
     ];
 
     public static function name($value)

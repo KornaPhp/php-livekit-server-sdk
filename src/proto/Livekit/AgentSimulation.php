@@ -61,72 +61,9 @@ interface AgentSimulation
     /**
      *
      *
-     * Generated from protobuf method <code>livekit.AgentSimulation/CreateScenario</code>
-     *
-     * @throws \Twirp\Error
-     */
-    public function CreateScenario(array $ctx, \Livekit\Scenario\Create\Request $req): \Livekit\Scenario\Create\Response;
-
-    /**
-     *
-     *
      * Generated from protobuf method <code>livekit.AgentSimulation/CreateScenarioFromSession</code>
      *
      * @throws \Twirp\Error
      */
     public function CreateScenarioFromSession(array $ctx, \Livekit\Scenario\CreateFromSession\Request $req): \Livekit\Scenario\CreateFromSession\Response;
-
-    /**
-     *
-     *
-     * Generated from protobuf method <code>livekit.AgentSimulation/DeleteScenario</code>
-     *
-     * @throws \Twirp\Error
-     */
-    public function DeleteScenario(array $ctx, \Livekit\Scenario\Delete\Request $req): \Livekit\Scenario\Delete\Response;
-
-    /**
-     *
-     *
-     * Generated from protobuf method <code>livekit.AgentSimulation/UpdateScenario</code>
-     *
-     * @throws \Twirp\Error
-     */
-    public function UpdateScenario(array $ctx, \Livekit\Scenario\Update\Request $req): \Livekit\Scenario\Update\Response;
-
-    /**
-     *
-     *
-     * Generated from protobuf method <code>livekit.AgentSimulation/CreateScenarioGroup</code>
-     *
-     * @throws \Twirp\Error
-     */
-    public function CreateScenarioGroup(array $ctx, \Livekit\ScenarioGroup\Create\Request $req): \Livekit\ScenarioGroup\Create\Response;
-
-    /**
-     *
-     *
-     * Generated from protobuf method <code>livekit.AgentSimulation/DeleteScenarioGroup</code>
-     *
-     * @throws \Twirp\Error
-     */
-    public function DeleteScenarioGroup(array $ctx, \Livekit\ScenarioGroup\Delete\Request $req): \Livekit\ScenarioGroup\Delete\Response;
-
-    /**
-     *
-     *
-     * Generated from protobuf method <code>livekit.AgentSimulation/ListScenarioGroups</code>
-     *
-     * @throws \Twirp\Error
-     */
-    public function ListScenarioGroups(array $ctx, \Livekit\ScenarioGroup\PBList\Request $req): \Livekit\ScenarioGroup\PBList\Response;
-
-    /**
-     *
-     *
-     * Generated from protobuf method <code>livekit.AgentSimulation/ListScenarios</code>
-     *
-     * @throws \Twirp\Error
-     */
-    public function ListScenarios(array $ctx, \Livekit\Scenario\PBList\Request $req): \Livekit\Scenario\PBList\Response;
 }

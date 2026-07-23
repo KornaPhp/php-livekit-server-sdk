@@ -24,7 +24,7 @@ class DisconnectWhatsAppCallRequest extends \Google\Protobuf\Internal\Message
      * Required if the DisconnectReason is BUSINESS_INITIATED.
      * Optional for  USER_INITIATED as no API call to WhatsApp is needed.
      *
-     * Generated from protobuf field <code>string whatsapp_api_key = 2 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string whatsapp_api_key = 2 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      */
     protected $whatsapp_api_key = '';
     /**
@@ -86,7 +86,7 @@ class DisconnectWhatsAppCallRequest extends \Google\Protobuf\Internal\Message
      * Required if the DisconnectReason is BUSINESS_INITIATED.
      * Optional for  USER_INITIATED as no API call to WhatsApp is needed.
      *
-     * Generated from protobuf field <code>string whatsapp_api_key = 2 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string whatsapp_api_key = 2 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      * @return string
      */
     public function getWhatsappApiKey()
@@ -99,7 +99,7 @@ class DisconnectWhatsAppCallRequest extends \Google\Protobuf\Internal\Message
      * Required if the DisconnectReason is BUSINESS_INITIATED.
      * Optional for  USER_INITIATED as no API call to WhatsApp is needed.
      *
-     * Generated from protobuf field <code>string whatsapp_api_key = 2 [(.logger.redact) = true];</code>
+     * Generated from protobuf field <code>string whatsapp_api_key = 2 [(.logger.sensitivity) = SENSITIVITY_SECRET];</code>
      * @param string $var
      * @return $this
      */

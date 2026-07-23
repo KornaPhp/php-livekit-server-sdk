@@ -52,9 +52,15 @@ class CreateRoomRequest extends \Google\Protobuf\Internal\Message
     /**
      * metadata of room
      *
-     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      */
     protected $metadata = '';
+    /**
+     * search tags
+     *
+     * Generated from protobuf field <code>map<string, string> tags = 15;</code>
+     */
+    private $tags;
     /**
      * auto-egress configurations
      *
@@ -111,6 +117,8 @@ class CreateRoomRequest extends \Google\Protobuf\Internal\Message
      *           override the node room is allocated to, for debugging
      *     @type string $metadata
      *           metadata of room
+     *     @type array|\Google\Protobuf\Internal\MapField $tags
+     *           search tags
      *     @type \Livekit\RoomEgress $egress
      *           auto-egress configurations
      *     @type int $min_playout_delay
@@ -289,7 +297,7 @@ class CreateRoomRequest extends \Google\Protobuf\Internal\Message
     /**
      * metadata of room
      *
-     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @return string
      */
     public function getMetadata()
@@ -300,7 +308,7 @@ class CreateRoomRequest extends \Google\Protobuf\Internal\Message
     /**
      * metadata of room
      *
-     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact) = true, (.logger.redact_format) = "<redacted ({{ .Size }} bytes)>"];</code>
+     * Generated from protobuf field <code>string metadata = 5 [(.logger.redact_format) = "<redacted ({{ .Size }} bytes)>", (.logger.sensitivity) = SENSITIVITY_PII];</code>
      * @param string $var
      * @return $this
      */
@@ -308,6 +316,32 @@ class CreateRoomRequest extends \Google\Protobuf\Internal\Message
     {
         GPBUtil::checkString($var, True);
         $this->metadata = $var;
+
+        return $this;
+    }
+
+    /**
+     * search tags
+     *
+     * Generated from protobuf field <code>map<string, string> tags = 15;</code>
+     * @return \Google\Protobuf\Internal\MapField
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * search tags
+     *
+     * Generated from protobuf field <code>map<string, string> tags = 15;</code>
+     * @param array|\Google\Protobuf\Internal\MapField $var
+     * @return $this
+     */
+    public function setTags($var)
+    {
+        $arr = GPBUtil::checkMapField($var, \Google\Protobuf\Internal\GPBType::STRING, \Google\Protobuf\Internal\GPBType::STRING);
+        $this->tags = $arr;
 
         return $this;
     }

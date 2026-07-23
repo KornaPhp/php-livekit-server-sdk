@@ -22,15 +22,7 @@ class Request extends \Google\Protobuf\Internal\Message
      */
     protected $room_id = '';
     /**
-     * Generated from protobuf field <code>string group_id = 3;</code>
-     */
-    protected $group_id = '';
-    /**
-     * Generated from protobuf field <code>string label = 4;</code>
-     */
-    protected $label = '';
-    /**
-     * Generated from protobuf field <code>string region = 5;</code>
+     * Generated from protobuf field <code>string region = 3;</code>
      */
     protected $region = '';
 
@@ -42,8 +34,6 @@ class Request extends \Google\Protobuf\Internal\Message
      *
      *     @type string $project_id
      *     @type string $room_id
-     *     @type string $group_id
-     *     @type string $label
      *     @type string $region
      * }
      */
@@ -97,51 +87,7 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string group_id = 3;</code>
-     * @return string
-     */
-    public function getGroupId()
-    {
-        return $this->group_id;
-    }
-
-    /**
-     * Generated from protobuf field <code>string group_id = 3;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setGroupId($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->group_id = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string label = 4;</code>
-     * @return string
-     */
-    public function getLabel()
-    {
-        return $this->label;
-    }
-
-    /**
-     * Generated from protobuf field <code>string label = 4;</code>
-     * @param string $var
-     * @return $this
-     */
-    public function setLabel($var)
-    {
-        GPBUtil::checkString($var, True);
-        $this->label = $var;
-
-        return $this;
-    }
-
-    /**
-     * Generated from protobuf field <code>string region = 5;</code>
+     * Generated from protobuf field <code>string region = 3;</code>
      * @return string
      */
     public function getRegion()
@@ -150,7 +96,7 @@ class Request extends \Google\Protobuf\Internal\Message
     }
 
     /**
-     * Generated from protobuf field <code>string region = 5;</code>
+     * Generated from protobuf field <code>string region = 3;</code>
      * @param string $var
      * @return $this
      */
